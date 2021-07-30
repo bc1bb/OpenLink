@@ -2,7 +2,3 @@ Options -Indexes
 
 DirectoryIndex index.php
 ErrorDocument 404 /404.php
-
-<Files "apple-app-site-association">
-  ForceType 'application/json'
-</Files>

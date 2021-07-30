@@ -6,3 +6,5 @@ adminer.php
 
 setup.php
 # can be deleted and if it's not present, it may prevent git pull
+
+.idea
