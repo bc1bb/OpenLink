@@ -31,15 +31,15 @@ if (sizeof($argument) === 2) {
         if (is_curl()) {
             die($row['original']);
         }
-        #header("refresh:5;url=" . $original);
+        header("refresh:5;url=" . $original);
         add_header();
         ?>
         <center>
-            <h1><?= env('title') ?></h1><br>
+            <h1><?= env('title') ?></h1>
             <p>You will be redirected to <code><?= $prettier ?></code> in 5 seconds.</p>
             <a href="<?= $original ?>" class="btn">Impatient?</a>
             <a class="btn" href="javascript:history.back()">Go back</a>
-            <small><a class="btn" href="<?= env('ext_url') ?>/why-susp.php">Why do I see this page ?</a></small>
+            <small><a class="btn whysusp" href="<?= env('ext_url') ?>/why-susp.php">Why do I see this page ?</a></small>
         </center>
         <?php
     } else {

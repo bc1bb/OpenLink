@@ -90,7 +90,7 @@ if (isset($_POST["link"])) {
         ?>
         <center>
         <h1>Invalid URL.</h1>
-        <a class="btn why-susp" href="javascript:history.back()">Go back</a>
+        <a class="btn" href="javascript:history.back()">Go back</a>
         </center>
         <?php
     } elseif (! $valid_url && is_curl()) {

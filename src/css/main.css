@@ -19,6 +19,7 @@
     border-radius: .25rem;
     text-decoration: none;
     color: #2f0202;
+    background: white;
     height: 25px;
     width: 100px;
 }
@@ -28,7 +29,7 @@
     height: 45px;
 }
 
-.why-susp {
+.whysusp {
     height: 37px;
 }
 
