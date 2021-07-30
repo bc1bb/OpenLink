@@ -14,7 +14,7 @@ if (sizeof($argument) === 2) {
     ];
     try {
         $pdo = new PDO($dsn, env("mysql_username"), env("mysql_password"), $options);
-        $pdo->exec("use hiberlink");
+        $pdo->exec("use ". env("mysql_database"));
     } catch (PDOException $e) {
         die($e->getMessage()." ".(int)$e->getCode());
     }
@@ -35,28 +35,28 @@ if (sizeof($argument) === 2) {
         add_header();
         ?>
         <div class="center">
-            <h1>HiberLink</h1><br>
-            <p>Vous allez être rediriger vers <code><?= $prettier ?></code> dans 5 secondes.</p>
+            <h1><?= env('title') ?></h1><br>
+            <p>You will be redirected to <code><?= $prettier ?></code> in 5 seconds.</p>
             <br><br>
-            <a href="<?= $original ?>" class="btn rounded-lg mt-2">Acceder directement au site</a>
+            <a href="<?= $original ?>" class="btn rounded-lg mt-2">Impatient?</a>
             <br><br><br><br>
-            <a class="btn rounded-lg mt-2" href="javascript:history.back()">Revenir en arrière</a>
+            <a class="btn rounded-lg mt-2" href="javascript:history.back()">Go back</a>
             <br><br><br>
-            <small class="blue outline"><a href="<?= env('ext_url') ?>/why-susp.php">Pourquoi je vois cette page ?</a></small>
+            <small class="blue outline"><a href="<?= env('ext_url') ?>/why-susp.php">Why do I see this page ?</a></small>
         </div>
         <?php
     } else {
         add_header();
         ?>
-        <div class="center"><h4>Ce lien n'existe pas.</h4></div>
-        <a class="btn rounded-lg flex items-center mt-2" href="<?= env("ext_url") ?>">Revenir à l'accueil</a>
+        <div class="center"><h4>This link doesnt exist.</h4></div>
+        <a class="btn rounded-lg flex items-center mt-2" href="javascript:history.back()">Go back</a>
         <?php
     }
 } else {
     add_header();
     ?>
                     <img src="<?= env('ext_url') ?>/src/img/add.png" width="48" alt="+">
-                    <div class="center"><h4>Transformez votre lien dès maintenant.</h4></div>
+                    <div class="center"><h4>Transform your link now.</h4></div>
                     <form method="post" action="<?= env('ext_url') ?>/link.php">
                         <center>
                             <input placeholder="Lien original" type="text" name="link" class="border rounded-lg w-full px-2 py-1 h-14 mb-3 text-lg text-grey-darker leading-loose" required>

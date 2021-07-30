@@ -1,17 +1,14 @@
 /* TEAM */
-	Chef: Bruno Paiva
-	Contact: ppaiva11144 [at] gmail.com
-	From: Swiss
-
 	Developer: Jus de Patate_
 	Contact: jusdepatate [at] protonmail.org
 	From: France
 
 /* THANKS <3 */
-	Contributors: https://github.com/HiberFile/HiberLink/graphs/contributors
+	OpenLink  Contributors: https://github.com/jusdepatate/OpenLink/graphs/contributors
+	HiberLink Contributors: https://github.com/HiberFile/HiberLink/graphs/contributors
 
 /* SITE */
-	Last update:2020/06/20
-	Language: French
+	Last update: 2021
+	Language: English
 	Doctype: HTML5
-	IDE: PHPStorm
+	IDE: VSCodium

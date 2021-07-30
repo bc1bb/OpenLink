@@ -40,7 +40,7 @@ if (isset($_POST["link"])) {
         ];
         try {
             $pdo = new PDO($dsn, env("mysql_username"), env("mysql_password"), $options);
-            $pdo->exec("use hiberlink");
+            $pdo->exec("use ". env("mysql_database"));
         } catch (PDOException $e) {
             die($e->getMessage()." ".(int)$e->getCode());
         }
@@ -66,11 +66,11 @@ if (isset($_POST["link"])) {
         $row = $req->fetch();
         if (! isset($row['original']) && ! is_curl()) {
             ?>
-            <div class="center"><h4>Une erreur inconnue est survenue.</h4></div>
-            <a class="btn rounded-lg flex items-center mt-2" href="<?= env("ext_url") ?>">Revenir à l'accueil</a>
+            <div class="center"><h4>An unknown error happened.</h4></div>
+            <a class="btn rounded-lg flex items-center mt-2" href="javascript:history.back()">Go back</a>
             <?php
         } elseif (! isset($row['original']) && is_curl()) {
-            echo "erreur";
+            echo "error";
         } elseif (isset($row['original']) && ! is_curl()) {
             ?>
             <img src="<?= env("ext_url") ?>/src/img/ok.png" width="48" alt="ok">
@@ -78,8 +78,8 @@ if (isset($_POST["link"])) {
             <center>
                 <input type="text" id="lien" class=" border rounded-lg w-full px-2 py-1 h-14 mb-3 text-lg text-grey-darker leading-loose" value="<?= env("ext_url")."/?".$id ?>">
             </center>
-            <button class="btn rounded-lg flex items-center mt-2" onclick="copytoclipboard();" >Copier dans le presse-papier</button>
-            <a class="btn rounded-lg flex items-center mt-2" href="<?= env("ext_url") ?>">Revenir à l'accueil</a>
+            <button class="btn rounded-lg flex items-center mt-2" onclick="copytoclipboard();" >Copy</button>
+            <a class="btn rounded-lg flex items-center mt-2" href="javascript:history.back()">Go back</a>
             <?php
         } elseif (isset($row['original']) && is_curl()) {
             echo env("ext_url")."/?".$id;
@@ -87,11 +87,11 @@ if (isset($_POST["link"])) {
 
     } elseif (! $valid_url && ! is_curl()) {
         ?>
-        <div class="center"><h4>Lien invalide.</h4></div>
-        <a class="btn rounded-lg flex items-center mt-2" href="<?= env("ext_url") ?>">Revenir à l'accueil</a>
+        <div class="center"><h4>Invalid link.</h4></div>
+        <a class="btn rounded-lg flex items-center mt-2" href="javascript:history.back()">Go back</a>
         <?php
     } elseif (! $valid_url && is_curl()) {
-        echo "erreur";
+        echo "error";
     }
 
 } else {

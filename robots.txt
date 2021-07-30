@@ -1,4 +1,4 @@
-Sitemap: https://www.hiber.link/sitemap.xml
+Sitemap: /sitemap.xml
 
 User-agent: *
 Disallow: /src/

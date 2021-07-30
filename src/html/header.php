@@ -3,12 +3,12 @@
 if (basename(__FILE__) == basename($_SERVER["SCRIPT_FILENAME"])) {
     header("Status: 301 Moved Permanently", false, 301);
     header("Location: https://www.youtube.com/watch?v=dQw4w9WgXcQ");
-    // si le fichier est appelé via un navigateur, rick roll ! :)
-    // sinon, donner les variables a PHP
+    # if file is called by a browser, rick roll ! :)
+    # otherwise, send variables to PHP
 } else {
     ?>
 <!DOCTYPE html>
-<html lang="<?= env('lang') ?>" prefix="og: http://ogp.me/ns#">
+<html lang="en" prefix="og: http://ogp.me/ns#">
 <head>
     <!-- javascript -->
     <script src="<?= env('ext_url') ?>/src/js/clipboard.js"></script>
@@ -39,31 +39,31 @@ if (basename(__FILE__) == basename($_SERVER["SCRIPT_FILENAME"])) {
 
     <!-- meta -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <link rel="alternate" hreflang="fr" href="https://www.hiber.link">
+    <link rel="alternate" hreflang="en" href="<?= env('ext_url') ?>">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1,maximum-scale=1,minimum-scale=1">
     <meta name="application-name" content="<?= env('title') ?>">
     <meta name="msapplication-tooltip" content="<?= env('title') ?>"/>
-    <meta name="description" content="<?= env('title') ?> - Service de réduction de liens.">
+    <meta name="description" content="<?= env('title') ?> - Link shortening service.">
     <link rel="author" href="<?= env('ext_url') ?>/humans.txt" />
 
     <meta property="og:url" content="<?= env('ext_url') ?>">
     <meta property="og:type" content="website">
     <meta property="og:title" content="<?= env('title') ?>">
     <meta property="og:image" content="<?= env('ext_url') ?>/src/img/logo.png">
-    <meta property="og:image:alt" content="<?= env('title') ?> - Service de réduction de liens.">
-    <meta property="og:description" content="<?= env('title') ?> - Service de réduction de liens.">
+    <meta property="og:image:alt" content="<?= env('title') ?> - Link shortening service.">
+    <meta property="og:description" content="<?= env('title') ?> - Link shortening service.">
     <meta property="og:site_name" content="<?= env('title') ?>">
     <meta property="og:locale" content="fr_FR">
 
     <meta name="twitter:card" content="summary">
-    <meta name="twitter:site" content="@hiberfile">
-    <meta name="twitter:creator" content="@brunopaiva_15">
+    <meta name="twitter:site" content="@jusdepatate">
+    <meta name="twitter:creator" content="@jusdepatate">
     <meta name="twitter:url" content="<?= env('ext_url') ?>">
     <meta name="twitter:title" content="<?= env('title') ?>">
-    <meta name="twitter:description" content="<?= env('title') ?> - Service de réduction de liens.">
+    <meta name="twitter:description" content="<?= env('title') ?> - Link shortening service.">
     <meta name="twitter:image" content="<?= env('ext_url') ?>/src/img/logo.png">
-    <meta name="twitter:image:alt" content="<?= env('title') ?> - Service de réduction de liens.">
+    <meta name="twitter:image:alt" content="<?= env('title') ?> - Link shortening service.">
     <meta name="twitter:dnt" content="on">
 
     <title><?= env('title') ?></title>
