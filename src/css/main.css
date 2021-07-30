@@ -8,28 +8,77 @@
     margin-right: auto;
 }
 
+.grey {
+    color: grey;
+}
+
+.btn {
+    display: block;
+    padding: .375rem .75rem;
+    border: 1px solid #ced4da;
+    border-radius: .25rem;
+    text-decoration: none;
+    color: #2f0202;
+    height: 25px;
+    width: 100px;
+}
+
+.submit {
+    width: 200px;
+    height: 45px;
+}
+
+.why-susp {
+    height: 37px;
+}
+
 .copyleft {
     display: inline-block;
     transform: rotate(180deg);
 }
 
-.blue {
-    color: royalblue;
-    text-decoration: underline;
+.name {
+    font-weight: 300;
+    font-size: 50px;
+    text-decoration: none;
 }
 
-body {
+.link-form {
+    width: 300px;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.message {
+    display: block;
+    word-break: break-all;
+}
+
+html, body {
     font-family: "Open Sans", sans-serif;
 }
 
-hr {
+textarea, input {
+    font-family: "Open Sans", sans-serif;
     display: block;
-    width: 95%;
-    background-color: #b1b1b3;
-    height: 2px;
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    font-weight: 300;
+    line-height: 1.5;
+    border: 1px solid #ced4da;
+    border-radius: .25rem;
 }
 
+textarea {
+    width: 25%;
+    height: 10em;
+}
 
+footer {
+    position: fixed;
+    bottom: 5px;
+    left: 5px;
+}
 
 /* Fonts */
 @font-face {

@@ -1,4 +1,4 @@
-// Script qui sert à copier le lien dans le presse papiers
+// copypaste things, comes from hiberfile
 
 function select_all_and_copy(el) {
     if (document.body.createTextRange) {

@@ -34,33 +34,30 @@ if (sizeof($argument) === 2) {
         #header("refresh:5;url=" . $original);
         add_header();
         ?>
-        <div class="center">
+        <center>
             <h1><?= env('title') ?></h1><br>
             <p>You will be redirected to <code><?= $prettier ?></code> in 5 seconds.</p>
-            <br><br>
-            <a href="<?= $original ?>" class="btn rounded-lg mt-2">Impatient?</a>
-            <br><br><br><br>
-            <a class="btn rounded-lg mt-2" href="javascript:history.back()">Go back</a>
-            <br><br><br>
-            <small class="blue outline"><a href="<?= env('ext_url') ?>/why-susp.php">Why do I see this page ?</a></small>
-        </div>
+            <a href="<?= $original ?>" class="btn">Impatient?</a>
+            <a class="btn" href="javascript:history.back()">Go back</a>
+            <small><a class="btn" href="<?= env('ext_url') ?>/why-susp.php">Why do I see this page ?</a></small>
+        </center>
         <?php
     } else {
         add_header();
         ?>
         <div class="center"><h4>This link doesnt exist.</h4></div>
-        <a class="btn rounded-lg flex items-center mt-2" href="javascript:history.back()">Go back</a>
+        <a class="btn " href="javascript:history.back()">Go back</a>
         <?php
     }
 } else {
     add_header();
     ?>
-                    <img src="<?= env('ext_url') ?>/src/img/add.png" width="48" alt="+">
-                    <div class="center"><h4>Transform your link now.</h4></div>
+                    <div class="center"><h1>Transform your link now.</h1></div><br>
                     <form method="post" action="<?= env('ext_url') ?>/link.php">
                         <center>
-                            <input placeholder="Lien original" type="text" name="link" class="border rounded-lg w-full px-2 py-1 h-14 mb-3 text-lg text-grey-darker leading-loose" required>
-                            <input id="buttonsend" type="submit" value="Transformation" name="submit" class="btn rounded-lg flex items-center mt-2">
+                            <input placeholder="Original link" type="text" name="link" class="link-form" required>
+
+                            <input id="buttonsend" type="submit" value="Transformation" name="submit" class="btn submit">
                         </center>
                     </form>
     <?php

@@ -1,4 +1,4 @@
-# HiberLink
+# OpenLink
 [![CodeFactor](https://www.codefactor.io/repository/github/jusdepatate/openlink/badge)](https://www.codefactor.io/repository/github/jusdepatate/openlink)
 
 

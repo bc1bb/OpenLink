@@ -12,7 +12,7 @@ $options = [
 ];
 try {
     $pdo = new PDO($dsn, env("mysql_username"), env("mysql_password"), $options);
-    $pdo->exec("use hiberlink");
+    $pdo->exec("use ". env("mysql_database"));
 } catch (\PDOException $e) {
     die($e->getMessage()." ".(int)$e->getCode());
 }

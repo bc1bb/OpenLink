@@ -66,20 +66,21 @@ if (isset($_POST["link"])) {
         $row = $req->fetch();
         if (! isset($row['original']) && ! is_curl()) {
             ?>
-            <div class="center"><h4>An unknown error happened.</h4></div>
-            <a class="btn rounded-lg flex items-center mt-2" href="javascript:history.back()">Go back</a>
+            <center>
+                <h1>An unknown error happened.</h1>
+                <a class="btn" href="<?= env("ext_url") ?>">Go back</a>
+            </center>
             <?php
         } elseif (! isset($row['original']) && is_curl()) {
             echo "error";
         } elseif (isset($row['original']) && ! is_curl()) {
             ?>
-            <img src="<?= env("ext_url") ?>/src/img/ok.png" width="48" alt="ok">
-            <p class="center"><h4>Votre lien est prêt. Partagez le dès maintenant.</h4></p>
+            <h1 class="center">Your link is ready.</h4>
             <center>
-                <input type="text" id="lien" class=" border rounded-lg w-full px-2 py-1 h-14 mb-3 text-lg text-grey-darker leading-loose" value="<?= env("ext_url")."/?".$id ?>">
+                <input readonly type="text" id="lien" class="link-form" value="<?= env("ext_url")."/?".$id ?>">
+                <a class="btn" onclick="copytoclipboard();" >Copy</a>
+                <a class="btn" href="javascript:history.back()">Go back</a>
             </center>
-            <button class="btn rounded-lg flex items-center mt-2" onclick="copytoclipboard();" >Copy</button>
-            <a class="btn rounded-lg flex items-center mt-2" href="javascript:history.back()">Go back</a>
             <?php
         } elseif (isset($row['original']) && is_curl()) {
             echo env("ext_url")."/?".$id;
@@ -87,8 +88,10 @@ if (isset($_POST["link"])) {
 
     } elseif (! $valid_url && ! is_curl()) {
         ?>
-        <div class="center"><h4>Invalid link.</h4></div>
-        <a class="btn rounded-lg flex items-center mt-2" href="javascript:history.back()">Go back</a>
+        <center>
+        <h1>Invalid URL.</h1>
+        <a class="btn why-susp" href="javascript:history.back()">Go back</a>
+        </center>
         <?php
     } elseif (! $valid_url && is_curl()) {
         echo "error";

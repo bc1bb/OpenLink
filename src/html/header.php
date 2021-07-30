@@ -15,27 +15,7 @@ if (basename(__FILE__) == basename($_SERVER["SCRIPT_FILENAME"])) {
     <script src="<?= env('ext_url') ?>/src/js/main.js"></script>
 
     <!-- css -->
-    <link rel="stylesheet" type="text/css" href="<?= env('ext_url') ?>/src/css/normalize.min.css"/>
     <link rel="stylesheet" type="text/css" href="<?= env('ext_url') ?>/src/css/main.css" />
-
-    <!-- icons -->
-    <link rel="apple-touch-icon" sizes="57x57" href="<?= env('ext_url') ?>/src/img/apple-icon-57x57.png">
-    <link rel="apple-touch-icon" sizes="60x60" href="<?= env('ext_url') ?>/src/img/apple-icon-60x60.png">
-    <link rel="apple-touch-icon" sizes="72x72" href="<?= env('ext_url') ?>/src/img/apple-icon-72x72.png">
-    <link rel="apple-touch-icon" sizes="76x76" href="<?= env('ext_url') ?>/src/img/apple-icon-76x76.png">
-    <link rel="apple-touch-icon" sizes="114x114" href="<?= env('ext_url') ?>/src/img/apple-icon-114x114.png">
-    <link rel="apple-touch-icon" sizes="120x120" href="<?= env('ext_url') ?>/src/img/apple-icon-120x120.png">
-    <link rel="apple-touch-icon" sizes="144x144" href="<?= env('ext_url') ?>/src/img/apple-icon-144x144.png">
-    <link rel="apple-touch-icon" sizes="152x152" href="<?= env('ext_url') ?>/src/img/apple-icon-152x152.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="<?= env('ext_url') ?>/src/img/apple-icon-180x180.png">
-    <link rel="icon" type="image/png" sizes="192x192"  href="<?= env('ext_url') ?>/src/img/android-icon-192x192.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="<?= env('ext_url') ?>/src/img/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="96x96" href="<?= env('ext_url') ?>/src/img/favicon-96x96.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="<?= env('ext_url') ?>/src/img/favicon-16x16.png">
-    <link rel="manifest" href="/manifest.json">
-    <meta name="msapplication-TileColor" content="#ffffff">
-    <meta name="msapplication-TileImage" content="<?= env('ext_url') ?>/src/img/ms-icon-144x144.png">
-    <meta name="theme-color" content="#ffffff">
 
     <!-- meta -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -92,13 +72,7 @@ if (basename(__FILE__) == basename($_SERVER["SCRIPT_FILENAME"])) {
     }
     ?>
 </head>
-<body class="flex flex-col items-center font-sans md:h-screen md:bg-grey-lightest">
-    <header class="relative flex-none flex flex-row items-center justify-between w-full px-6 h-16 md:h-24 z-20 bg-transparent">
-        <a href="<?= env('ext_url') ?>"><img class="imglogo" src="<?= env('ext_url') ?>/src/img/logo.png" width="158" alt="Logo de <?= env('title') ?>"/></a>
-    </header>
-    <main class="main">
-        <section class="h-full w-full p-6 md:flex md:flex-row md:rounded-lg md:shadow-big">
-            <div class="px-2 w-full md:px-0">
-                <div class="flex flex-col items-center justify-center border-2 border-dashed border-grey beaurounded px-6 py-16 h-full w-full">
+<body>
+<div><a class="name grey" href="<?= env('ext_url') ?>">OpenLink</a></div>
     <?php
 }
