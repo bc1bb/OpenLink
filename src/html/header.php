@@ -16,6 +16,7 @@ if (basename(__FILE__) == basename($_SERVER["SCRIPT_FILENAME"])) {
 
     <!-- css -->
     <link rel="stylesheet" type="text/css" href="<?= env('ext_url') ?>/src/css/main.css" />
+    <link rel="stylesheet" type="text/css" href="<?= env('ext_url') ?>/src/css/water.css" />
 
     <!-- meta -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -37,8 +38,8 @@ if (basename(__FILE__) == basename($_SERVER["SCRIPT_FILENAME"])) {
     <meta property="og:locale" content="fr_FR">
 
     <meta name="twitter:card" content="summary">
-    <meta name="twitter:site" content="@jusdepatate">
-    <meta name="twitter:creator" content="@jusdepatate">
+    <meta name="twitter:site" content="@jusdepatate_">
+    <meta name="twitter:creator" content="@jusdepatate_">
     <meta name="twitter:url" content="<?= env('ext_url') ?>">
     <meta name="twitter:title" content="<?= env('title') ?>">
     <meta name="twitter:description" content="<?= env('title') ?> - Link shortening service.">

@@ -2,37 +2,47 @@
 [![CodeFactor](https://www.codefactor.io/repository/github/jusdepatate/openlink/badge)](https://www.codefactor.io/repository/github/jusdepatate/openlink)
 
 
-OpenLink is a link shortner project based off the project [HiberLink](https://github.com/HiberFile/HiberLink).
+OpenLink is a link shortner project based off the abandoned project [HiberLink](https://github.com/HiberFile/HiberLink).
 
 ## API
 
 ### `/link.php`
-#### Exemple
+#### Example
 ```bash
 curl --user-agent "curl" -X POST "https://example.com/link.php" --data "link=https://github.com"
 ```
-**Every settings are required.**
+**Every setting are required.**
 
 #### Response
 - In case of error: `error`.
-- In case of sucess: response will be the link.
+- In case of success: response will be the link.
 
 ### `/index.php`
 #### Exemple
 ```bash
-curl --user-agent "curl" -X POST -L "https://example.com/index.php?ID"
+curl --user-agent "curl" -X GET -L "https://example.com/index.php?ID"
 ```
 **or**
 ```bash
-curl --user-agent "curl" -X POST -L "https://example.com/?ID"
+curl --user-agent "curl" -X GET -L "https://example.com/?ID"
 ```
-**Every settings are required
+**Every setting are required
 <br>`ID` depends on the request.
 <br>Response will be in header `Location` or in page**
 
-#### Réponse
-- En cas d'erreur: `erreur`.
-- En cas de réussite: la réponse est le lien long.
+#### Response
+- Error: `erreur`.
+- Success: response will be long link.
+
+### `/status.php`
+#### Exemple
+```bash
+curl --user-agent "curl" -X GET -L "https://example.com/status.php"
+```
+
+#### Response
+- Success: `{"status": "OK"}`.
+- Error: Anything else.
 
 
 ## Installation
@@ -41,7 +51,7 @@ curl --user-agent "curl" -X POST -L "https://example.com/?ID"
 - PHP PDO,
 - MySQL/MariaDB server.
 
-### Configuration guidée
+### Guided configuration
 
 - `git clone https://github.com/jusdepatate/OpenLink.git`,
 - `cd OpenLink`
@@ -68,7 +78,4 @@ curl --user-agent "curl" -X POST -L "https://example.com/?ID"
 - `mysql_password` => MySQL password.
 
 ## Known to be working on
-- Debian 10 + Apache 2.4 + PHP 7.3
-- Ubuntu 18.04 + Apache 2.4 + PHP 7.2
-- Arch Linux + Apache 2.4 + PHP 7.4
-- Arch Linux + Apache 2.4 + PHP 8.0
+- Arch Linux + Nginx 1.12 + PHP 8.0

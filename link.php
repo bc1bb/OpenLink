@@ -68,7 +68,7 @@ if (isset($_POST["link"])) {
             ?>
             <center>
                 <h1>An unknown error happened.</h1>
-                <a class="btn" href="<?= env("ext_url") ?>">Go back</a>
+                <a class="btn" href="<?= env("ext_url") ?>"><input type="button" value="Go Back"></a>
             </center>
             <?php
         } elseif (! isset($row['original']) && is_curl()) {
@@ -78,8 +78,8 @@ if (isset($_POST["link"])) {
             <h1 class="center">Your link is ready.</h4>
             <center>
                 <input readonly type="text" id="lien" class="link-form" value="<?= env("ext_url")."/?".$id ?>">
-                <a class="btn" onclick="copytoclipboard();" >Copy</a>
-                <a class="btn" href="javascript:history.back()">Go back</a>
+                <a class="btn" onclick="copytoclipboard();" ><input type="button" value="Copy"></a>
+                <a class="btn" href="javascript:history.back()"><input type="button" value="Go Back"></a>
             </center>
             <?php
         } elseif (isset($row['original']) && is_curl()) {
@@ -90,7 +90,7 @@ if (isset($_POST["link"])) {
         ?>
         <center>
         <h1>Invalid URL.</h1>
-        <a class="btn" href="javascript:history.back()">Go back</a>
+        <a class="btn" href="javascript:history.back()"><input type="button" value="Go Back"></a>
         </center>
         <?php
     } elseif (! $valid_url && is_curl()) {
