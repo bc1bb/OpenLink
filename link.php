@@ -78,7 +78,7 @@ if (isset($_POST["link"])) {
             <h1 class="center">Your link is ready.</h4>
             <center>
                 <input readonly type="text" id="lien" class="link-form" value="<?= env("ext_url")."/?".$id ?>">
-                <a class="btn" onclick="copytoclipboard();" ><input type="button" value="Copy"></a>
+                <a class="btn" href="javascript:copytoclipboard()" ><input type="button" value="Copy"></a>
                 <a class="btn" href="javascript:history.back()"><input type="button" value="Go Back"></a>
             </center>
             <?php
