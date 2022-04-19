@@ -7,7 +7,7 @@ if (basename(__FILE__) == basename($_SERVER["SCRIPT_FILENAME"])) {
 } else {
     ?>
     <footer>
-        <small class="grey"><span class="copyleft">&copy;</span> 2021 - Jus de Patate_ - <a href="https://github.com/jusdepatate/openlink/commit/<?= get_current_git_commit() ?>"><?= get_current_git_commit("master", true) ?></a></small>
+        <small class="grey"><span class="copyleft">&copy;</span> 2022 - jusdepatate - <a href="https://github.com/jusdepatate/openlink/commit/<?= get_current_git_commit() ?>"><?= get_current_git_commit("master", true) ?></a></small>
     </footer>
 </body>
 </html>

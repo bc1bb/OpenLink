@@ -1608,10 +1608,10 @@ dialog::backdrop {
 footer {
     color: var(--text-muted);
     position: absolute;
-    bottom: 0;
-    height: 100px;
-    width: 40%;
-}
+    /* bottom: 0; */
+    /* height: 100px; */
+    /* width: 40%; */
+white-space: nowrap;}
 
 @media (prefers-color-scheme: dark) {
 

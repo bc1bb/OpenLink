@@ -8,7 +8,7 @@
 	HiberLink Contributors: https://github.com/HiberFile/HiberLink/graphs/contributors
 
 /* SITE */
-	Last update: 2021
+	Last update: 2022
 	Language: English
 	Doctype: HTML5
 	IDE: VSCodium
