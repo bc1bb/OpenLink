@@ -64,6 +64,7 @@ curl --user-agent "curl" -X GET -L "https://example.com/status.php"
 - `title` => Name and title of the website,
 - `ext_url` => external URL of server, **should start by `https://`/`http://` and should not end with `/`**,
 - `char_per_id` => Number of characters to use for links ID, `8` should be enough (98079714615416886934934209737619787751599303819750539264 possibilities),
+- `warn_on_redirect` => if set to `true`, will warn user that they are going to be redirected,
 
 
 - `matomo` => boolean for JS matomo integration
@@ -79,3 +80,4 @@ curl --user-agent "curl" -X GET -L "https://example.com/status.php"
 
 ## Known to be working on
 - Arch Linux + Nginx 1.12 + PHP 8.0
+- Debian 11 + Apache 2.4 + PHP 7.4
