@@ -11,6 +11,7 @@ if (basename(__FILE__) == basename($_SERVER["SCRIPT_FILENAME"])) {
         'title' => 'OpenLink', # site name
         'ext_url' => 'http://127.0.0.1/OpenLink', # External URL !!! Don't put '/' at the end
         'char_per_id' => 8, # Number of characters to use per link ID
+        'warn_on_redirect' => false, # Should we warn user that he's going to get redirected to a URL ?
         #</general>
 
         #<matomo>
