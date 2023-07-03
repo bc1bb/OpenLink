@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+{% block box %}
+    <h1 class="font-heading text-gray-400 dark:text-gray-600">
+        Link shortened!
+    </h1>
+
+    <div class="flex flex-col mb-3">
+        <input class="mt-6 p-2 rounded-lg dark:border-slate-600 dark:bg-slate-600" placeholder="Final Link" value="{{ link }}" type="text" name="link" required>
+        <input class="mt-6 font-heading text-gray-600 border-2 dark:border-slate-600 rounded-lg shadow-lg hover:shadow-xl p-2" type="submit" value="Copy" name="submit">
+    </div>
+{% endblock %}
