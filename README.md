@@ -1,8 +1,14 @@
 # OpenLink
-[![CodeFactor](https://www.codefactor.io/repository/github/jusdepatate/openlink/badge)](https://www.codefactor.io/repository/github/jusdepatate/openlink)
+(2023 rewrite)
 
+OpenLink is a link shortener based on HiberLink. This is it's rewrote version in Symfony with Tailwind. It used to be made in bare PHP with handwritten CSS.
 
-OpenLink is a link shortner project based off the abandoned project [HiberLink](https://github.com/HiberFile/HiberLink).
+# TODO
+- working API,
+- mobile ui,
+- dark mode,
+- docker !
+- prod-ready
 
 ## API
 
@@ -60,16 +66,11 @@ curl --user-agent "curl" -X GET -L "https://example.com/status.php"
 - `php setup.php` or access the setup.php page with a browser (`curl` is enough),
 - `rm setup.php`. (you will still be able to update thru git pull if you remove this file, thanks to [.gitignore](.gitignore))
 
-### Variables `env.php`
+### Variables env
 - `title` => Name and title of the website,
 - `ext_url` => external URL of server, **should start by `https://`/`http://` and should not end with `/`**,
 - `char_per_id` => Number of characters to use for links ID, `8` should be enough (98079714615416886934934209737619787751599303819750539264 possibilities),
 - `warn_on_redirect` => if set to `true`, will warn user that they are going to be redirected,
-
-
-- `matomo` => boolean for JS matomo integration
-- `matomo_siteid` => siteid on matomo,
-- `matomo_url` => Matomo URL **as given by Matomo** (should start by `https://`/`http://` and **should end** with `/`),
 
 
 - `mysql_address` => MySQL server address,
@@ -77,7 +78,3 @@ curl --user-agent "curl" -X GET -L "https://example.com/status.php"
 - `mysql_database` => MySQL databse,
 - `mysql_username` => MySQL username,
 - `mysql_password` => MySQL password.
-
-## Known to be working on
-- Arch Linux + Nginx 1.12 + PHP 8.0
-- Debian 11 + Apache 2.4 + PHP 7.4
