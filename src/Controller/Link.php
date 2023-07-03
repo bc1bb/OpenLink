@@ -13,7 +13,7 @@ class Link extends AbstractController
     public function link(): Response
     {
         // TODO: switch to not "dev"
-        $version = GetVersion::get_current_commit("master", true);
+        $version = GetVersion::get_current_commit("develop", true);
 
         return $this->render('link.html.twig', ["version" => $version, "link" => "https://onlk.ovh/?ExAmPlE"]);
     }

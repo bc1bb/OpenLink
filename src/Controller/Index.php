@@ -13,7 +13,7 @@ class Index extends AbstractController
     public function index(): Response
     {
         // TODO: switch to not "dev"
-        $version = GetVersion::get_current_commit("master", true);
+        $version = GetVersion::get_current_commit("develop", true);
 
         return $this->render('index.html.twig', ["version" => $version]);
     }
