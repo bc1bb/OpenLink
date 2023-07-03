@@ -55,26 +55,9 @@ curl --user-agent "curl" -X GET -L "https://example.com/status.php"
 ### Requirements
 - PHP 7.0 or better,
 - PHP PDO,
+- Nodejs,
 - MySQL/MariaDB server.
 
 ### Guided configuration
 
-- `git clone https://github.com/jusdepatate/OpenLink.git`,
-- `cd OpenLink`
-- `cp env.example.php env.php`,
-- Edit `env.php` with your fav text editor (ex: `nano env.php`),
-- `php setup.php` or access the setup.php page with a browser (`curl` is enough),
-- `rm setup.php`. (you will still be able to update thru git pull if you remove this file, thanks to [.gitignore](.gitignore))
-
-### Variables env
-- `title` => Name and title of the website,
-- `ext_url` => external URL of server, **should start by `https://`/`http://` and should not end with `/`**,
-- `char_per_id` => Number of characters to use for links ID, `8` should be enough (98079714615416886934934209737619787751599303819750539264 possibilities),
-- `warn_on_redirect` => if set to `true`, will warn user that they are going to be redirected,
-
-
-- `mysql_address` => MySQL server address,
-- `mysql_port` => MySQL server port,
-- `mysql_database` => MySQL databse,
-- `mysql_username` => MySQL username,
-- `mysql_password` => MySQL password.
+`php bin/console doctrine:migrations:migrate`
