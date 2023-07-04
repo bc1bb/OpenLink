@@ -4,9 +4,6 @@
 OpenLink is a link shortener based on HiberLink. This is it's rewrote version in Symfony with Tailwind. It used to be made in bare PHP with handwritten CSS.
 
 # TODO
-- working API,
-- mobile ui,
-- dark mode,
 - docker !
 - prod-ready
 
