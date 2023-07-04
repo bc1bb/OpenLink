@@ -14,8 +14,7 @@ use Symfony\Component\Validator\Validation;
 
 class Shortener extends AbstractController
 {
-
-    #[Route('/link', name: 'create_link', methods: ['POST'])]
+    #[Route('/link', methods: ['POST'])]
     public function posting_link(Request $request, EntityManagerInterface $entity_manager): Response
     {
         $version = GetVersion::get_current_commit("develop", true);
@@ -35,7 +34,7 @@ class Shortener extends AbstractController
         $entity_manager->persist($short_link);
         $entity_manager->flush();
 
-        return $this->render('link.html.twig', [ 'version' => $version, 'link' => "https://onlk.ovh/?".$short_link->getShorten() ]);
+        return $this->render('link.html.twig', [ 'version' => $version, 'link' => "https://onlk.ovh/".$short_link->getShorten() ]);
     }
 
     private static function random_str(): string {
