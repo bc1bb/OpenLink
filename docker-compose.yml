@@ -2,6 +2,7 @@ version: "3.4"
 
 services:
   php:
+    image: php:fpm
     command:
       - "apt update && "
       - "apt install nodejs npm npx -y && "
@@ -28,6 +29,7 @@ services:
       APP_SECRET: ChanGeMe!
 
   caddy:
+    image: caddy:2.6.4-alpine
     build:
       context: .
       target: app_caddy
