@@ -4,19 +4,18 @@ COPY . /var/www/
 WORKDIR /var/www/
 
 # Building
-RUN apt-get update && apt-get update && \
-    apt-get install -y curl git
+RUN apt-get update && \
+    apt-get install -y curl git libpng-dev libonig-dev libxml2-dev zip unzip
 RUN curl https://raw.githubusercontent.com/mklement0/n-install/stable/bin/n-install | bash  -s -- -y lts
 ENV PATH=$PATH:/root/n/bin
 RUN npm install &&  \
     npx tailwindcss -o build.css --minify
 
-# PHP-Mysql
-RUN apt-get install php-mysql && \
-    docker-php-ext-install mysqli
+# Setup PHP exts
+RUN docker-php-ext-install pdo_mysql mbstring exif pcntl bcmath gd
 
 # Composer
-RUN wget https://getcomposer.org/download/2.5.8/composer.phar && \
+RUN curl https://getcomposer.org/download/2.5.8/composer.phar -O  && \
     mv composer.phar /usr/bin/composer && \
     chmod +x /usr/bin/composer && \
     composer install
