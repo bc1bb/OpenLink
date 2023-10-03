@@ -21,7 +21,8 @@ COPY --from=BUILD_IMAGE /build/public ./public
 COPY --from=BUILD_IMAGE /build/node_modules ./node_modules
 COPY . .
 
-RUN composer install
+RUN composer install \
+    && composer dump-env prod
 
 RUN php bin/console doctrine:migrations:migrate
 
