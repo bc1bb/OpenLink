@@ -21,7 +21,7 @@ services:
     depends_on:
       - database
     volumes:
-      - ./apache2.conf:/etc/apache2/site-enabled/000-default.conf
+      - ./apache2.conf:/etc/apache2/sites-enabled/000-default.conf
       - ./a2err.log:/var/log/apache2/error.log
       - ./a2access.log:/var/log/apache2/access.log
       - onlk:/var/www/html

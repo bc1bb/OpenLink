@@ -18,8 +18,7 @@ class Index extends AbstractController
             return $this->redirect("/".array_key_first($params), 307);
         }
 
-        // TODO: switch to not "dev"
-        $version = GetVersion::get_current_commit("develop", true);
+        $version = GetVersion::get_current_commit("master", true);
 
         return $this->render('index.html.twig', [ "error" => false, "version" => $version]);
     }

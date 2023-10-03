@@ -11,7 +11,7 @@ OpenLink is a link shortener based on HiberLink. This is it's rewrote version in
 - `cp .env.example .env`
 - edit .env
 - `docker compose up -d`
-- `docker compose exec php bin/console doctrine:migrations:migrate`
+- `docker compose exec onlk html/bin/console doctrine:migrations:migrate`
 
 After building, don't forget to remove unused images.
 
@@ -19,7 +19,7 @@ After building, don't forget to remove unused images.
 - `cp .env.example .env`
 - edit .env
 - `composer install`
-- `php html/bin/console doctrine:migrations:migrate`
+- `php bin/console doctrine:migrations:migrate`
 - `npm install`
 - `npm run build`
 - `composer dump-env prod`

@@ -11,6 +11,7 @@ FROM php:8.2-apache-bullseye
 
 ENV APACHE_DOCUMENT_ROOT /var/www/html/html/public
 ENV COMPOSER_ALLOW_SUPERUSER 1
+ENV SYMFONY_ENV prod
 
 RUN apt-get update && apt-get install -y libzip-dev unzip curl git \
     && docker-php-ext-install zip pdo pdo_mysql \
@@ -26,7 +27,7 @@ COPY --from=BUILD_IMAGE /build/public ./public
 COPY . .
 COPY ./apache2.conf /etc/apache2/sites-enabled/000-default.conf
 
-RUN composer install \
+RUN composer install --no-dev --optimize-autoloader \
     && composer dump-env prod
 
 CMD ["apache2-foreground"]
