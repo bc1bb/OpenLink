@@ -3,9 +3,11 @@
 
 OpenLink is a link shortener based on HiberLink. This is it's rewrote version in Symfony with Tailwind. It used to be made in bare PHP with handwritten CSS.
 
-<img src="showcase/dark.jpg" alt="OpenLink Dark Mode"/>
-<hr>
-<img src="showcase/white.jpg" alt="OpenLink White Mode" />
+
+| **OpenLink Dark Mode** | **OpenLink White Mode** |
+| ------------- | ------------- |
+| <img align="center" src="showcase/dark.jpg" alt="OpenLink Dark Mode"/> | <img align="center" src="showcase/white.jpg" alt="OpenLink White Mode" /> |
+
 
 ## Docker Setup
 - `cp .env.example .env`
