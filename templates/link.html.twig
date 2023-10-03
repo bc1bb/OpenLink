@@ -1,0 +1,14 @@
+{% extends 'base.html.twig' %}
+{% block scripts %}
+    <script src="js/copy.js"></script>
+{% endblock %}
+{% block box %}
+    <h1 class="font-heading text-gray-400 dark:text-gray-600">
+        Link shortened!
+    </h1>
+
+    <div class="flex flex-col mb-3">
+        <input class="mt-6 p-2 rounded-lg text-gray-500 dark:border-slate-600 dark:bg-slate-600" placeholder="Final Link" value="{{ link }}" type="text" id="link" name="link" required>
+        <input onclick="copy(document);" class="mt-6 font-heading text-gray-600 border-2 dark:border-slate-600 rounded-lg shadow-lg hover:shadow-xl p-2" type="submit" value="Copy" name="submit">
+    </div>
+{% endblock %}

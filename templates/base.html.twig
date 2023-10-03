@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>OpenLink</title>
+    {% block stylesheets %}
+        {{ encore_entry_link_tags('app') }}
+    {% endblock %}
+    {% block scripts %}
+    {% endblock %}
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@800&family=Urbanist&display=swap" rel="stylesheet">
+</head>
+<body class="bg-neutral-100 dark:bg-slate-900 overflow-clip">
+<div class="flex flex-col">
+    <div class="mt-5 ml-5 text-7xl lg:text-6xl xl:text-5xl font-heading text-gray-400 dark:text-gray-600 text-center lg:text-left">
+        <a href="/">OpenLink</a>
+    </div>
+    <div class="flex justify-center items-center h-[95vh] md:h-[80vh] lg:h-[80vh]">
+        <div class="box-border box-content p-6 border-4 dark:border-slate-600 lg:border-2 rounded shadow-xl lg:shadow-lg hover:shadow-xl">
+            <div class="flex flex-col ml-3 mr-3 mt-10 mb-10 lg:mb-5 lg:mt-5 justify-center items-center text-4xl lg:text-2xl xl:text-xl">
+                {% block box %} {% endblock %}
+            </div>
+        </div>
+    </div>
+</div>
+<footer class="fixed bottom-0 left-0 z-20 w-full p-4 border-t dark:border-slate-600 bg-neutral-200 dark:bg-slate-800 shadow">
+    <span class="text-xl lg:text-lg xl:text-md text-gray-500 sm:text-center dark:text-gray-700">2023 - <a href="https://me.jusdepatate.xyz" target="_blank">bc1bb</a> - <a class="hover:underline" href="https://github.com/bc1bb/openlink" target="_blank">{{ version }}</a>.</span>
+</footer>
+</body>
+</html>
