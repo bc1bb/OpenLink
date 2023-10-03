@@ -18,3 +18,4 @@ OpenLink is a link shortener based on HiberLink. This is it's rewrote version in
 - `php bin/console doctrine:migrations:migrate`
 - `npm install`
 - `npm run build`
+- [dev]: symfony server:start
