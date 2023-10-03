@@ -7,10 +7,15 @@ COPY . .
 RUN npm run build
 
 # Production Stage
-FROM php:8.2-fpm-bullseye
+FROM php:8.2-apache-bullseye
+
+ENV APACHE_DOCUMENT_ROOT /var/www/html
+ENV COMPOSER_ALLOW_SUPERUSER 1
 
 RUN apt-get update && apt-get install -y libzip-dev unzip curl git \
-    && docker-php-ext-install zip pdo pdo_mysql
+    && docker-php-ext-install zip pdo pdo_mysql \
+    && apt-get clean \
+    && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
 
@@ -18,12 +23,11 @@ WORKDIR /var/www/html
 
 COPY --from=BUILD_IMAGE /build/package*.json ./
 COPY --from=BUILD_IMAGE /build/public ./public
-COPY --from=BUILD_IMAGE /build/node_modules ./node_modules
 COPY . .
+COPY ./apache2.conf /etc/apache2/sites-enabled/000-default.conf
 
 RUN composer install \
     && composer dump-env prod
 
-RUN php bin/console doctrine:migrations:migrate
-
-CMD ["php-fpm"]
+CMD ["apache2-foreground"]
+EXPOSE 80

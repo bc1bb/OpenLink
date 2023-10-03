@@ -7,11 +7,15 @@ OpenLink is a link shortener based on HiberLink. This is it's rewrote version in
 <hr>
 <img src="showcase/white.jpg" alt="OpenLink White Mode" />
 
-# TODO
-- docker !
-- prod-ready
+## Docker Setup
+- `cp .env.example .env`
+- edit .env
+- `docker compose up -d`
+- `docker compose exec php bin/console doctrine:migrations:migrate`
 
-## Setup
+After building, don't forget to remove unused images.
+
+## Non-Docker Setup
 - `cp .env.example .env`
 - edit .env
 - `composer install`
