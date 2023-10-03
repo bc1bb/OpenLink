@@ -30,3 +30,6 @@ yarn-error.log
 
 # docker stuff
 mariadb/
+a2access.log
+a2err.log
+apache2.conf
