@@ -9,7 +9,7 @@ RUN npm run build
 # Production Stage
 FROM php:8.2-apache-bullseye
 
-ENV APACHE_DOCUMENT_ROOT /var/www/html
+ENV APACHE_DOCUMENT_ROOT /var/www/html/html/public
 ENV COMPOSER_ALLOW_SUPERUSER 1
 
 RUN apt-get update && apt-get install -y libzip-dev unzip curl git \
