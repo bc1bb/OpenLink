@@ -19,7 +19,7 @@ After building, don't forget to remove unused images.
 - `cp .env.example .env`
 - edit .env
 - `composer install`
-- `php bin/console doctrine:migrations:migrate`
+- `php html/bin/console doctrine:migrations:migrate`
 - `npm install`
 - `npm run build`
 - `composer dump-env prod`
