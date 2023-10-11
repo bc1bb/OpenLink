@@ -17,7 +17,7 @@ class Redirector extends AbstractController
         $long_link = $entity_manager->getRepository(Links::class)->findOneBy(["shorten" => $shorten]);
 
         if (! $long_link) {
-            $version = GetVersion::get_current_commit("develop", true);
+            $version = GetVersion::get_current_commit("master", true);
 
             return $this->render('index.html.twig', [ "error" => "Invalid Link", "version" => $version]);
         }

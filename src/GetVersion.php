@@ -5,7 +5,7 @@ use Symfony\Component\HttpKernel\KernelInterface;
 
 class GetVersion
 {
-    public static function get_current_commit(string $branch = 'develop', bool $pretty = false): bool|string
+    public static function get_current_commit(string $branch = 'master', bool $pretty = false): bool|string
     {
         if (file_get_contents(sprintf('../.git/refs/heads/%s', $branch))) {
             $hash = file_get_contents(sprintf('../.git/refs/heads/%s', $branch));

@@ -10,7 +10,7 @@ services:
       MYSQL_DATABASE: onlk
       MYSQL_ROOT_PASSWORD: onlkroot
     volumes:
-      - ./mariadb:/var/lib/mysql/
+      - onlkdb:/var/lib/mysql/
 
   onlk:
     build:
@@ -26,10 +26,11 @@ services:
       - ./a2access.log:/var/log/apache2/access.log
       - onlk:/var/www/html
     environment:
-      DATABASE_URL: mysql://onlk:onlk@database:3306/onlk?charset=utf8mb4
       APP_ENV: prod
-      APP_SECRET: ChanGeMe!
+      DATABASE_URL: mysql://onlk:onlk@database:3306/onlk?serverVersion=8&charset=utf8mb4
 
 volumes:
   onlk:
+    external: false
+  onlkdb:
     external: false

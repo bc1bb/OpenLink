@@ -17,7 +17,7 @@ class Shortener extends AbstractController
     #[Route('/link', methods: ['POST'])]
     public function posting_link(Request $request, EntityManagerInterface $entity_manager): Response
     {
-        $version = GetVersion::get_current_commit("develop", true);
+        $version = GetVersion::get_current_commit("master", true);
         $long_link = $request->get("link");
         $validator = Validation::createValidator();
         $violation = $validator->validate($long_link, new Url);

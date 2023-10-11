@@ -1,0 +1,28 @@
+name: Deploy on he01
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - master
+
+jobs:
+  deploy:
+    runs-on: self-hosted
+    steps:
+      - name: Stop previous version
+        run: docker stop openlink-onlk-1 || true
+
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Generate secrets
+        run: sed "s/APP_SECRET=.*/APP_SECRET=$(tr -dc A-Za-z0-9 </dev/urandom | head -c 35)/g" .env.example > .env
+
+      - name: Clean Docker images
+        run: docker image prune --force
+
+      - name: Build Docker Container
+        run: docker compose build
+
+      - name: Run Docker Compose
+        run: docker compose up -d

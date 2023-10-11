@@ -1,15 +1,17 @@
 # Build Stage
 FROM node:20-bullseye AS BUILD_IMAGE
+
+ENV NODE_ENV production
 WORKDIR /build
-COPY package*.json ./
-RUN npm ci
+COPY packag*.json ./
+RUN npm install --include=dev
 COPY . .
 RUN npm run build
 
 # Production Stage
 FROM php:8.2-apache-bullseye
 
-ENV APACHE_DOCUMENT_ROOT /var/www/html/html/public
+ENV APACHE_DOCUMENT_ROOT /var/www/html/public
 ENV COMPOSER_ALLOW_SUPERUSER 1
 ENV SYMFONY_ENV prod
 
